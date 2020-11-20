@@ -47,9 +47,9 @@ var xsltConfigCheck;
 var xsltConfigToTyped = null;
 
 var xsltConfigToCheckTyped = null;
-loadStyleSheet(relativePathToSrcMainXSLTResources + "config.to.checktyped.xslt", function( resp ) { 
-	xsltConfigToCheckTyped = resp; 
- });
+//loadStyleSheet(relativePathToSrcMainXSLTResources + "config.to.checktyped.xslt", function( resp ) { 
+//	xsltConfigToCheckTyped = resp; 
+//});
 
 var xsltConfigToDAJson = null;
 loadStyleSheet(relativePathToSrcTestResources + "webvalidation/config.to.da.json.xslt", function( resp ) { 
@@ -165,22 +165,22 @@ function processEvent(e) {
     var transformSource = e.data[2];
     if ( key == 'xsltConfigToTyped' ) 
     {
-      xsltConfigToTyped = transformSource;
+      xsltConfigToTyped = parseXML(transformSource);
       return;
     }
     if ( key == 'xsltConfigToCheckTyped' ) 
     {
-      xsltConfigToCheckTyped = transformSource;
+      xsltConfigToCheckTyped = parseXML(transformSource);
       return;
     }
     if ( key == 'xsltConfigToCheck' ) 
     {
-      xsltConfigCheck = transformSource;
+      xsltConfigCheck = parseXML(transformSource);
       return;
     }
     if ( key == 'schema' ) 
     {
-      schema = transformSource;
+      xsd = transformSource;
       return;
     }    
   }
