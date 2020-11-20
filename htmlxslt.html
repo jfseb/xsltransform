@@ -42,33 +42,12 @@ console.log(oDOM.documentElement.nodeName == "parsererror" ? "error while parsin
 return oDOM;
 }
 
-var xsltErrorsToHTML; 
-var xsltConfigCheck;
+var xsltErrorsToHTML = null;
+var xsltConfigCheck = null;
 var xsltConfigToTyped = null;
-
 var xsltConfigToCheckTyped = null;
-//loadStyleSheet(relativePathToSrcMainXSLTResources + "config.to.checktyped.xslt", function( resp ) { 
-//	xsltConfigToCheckTyped = resp; 
-//});
-
-var xsltConfigToDAJson = null;
-loadStyleSheet(relativePathToSrcTestResources + "webvalidation/config.to.da.json.xslt", function( resp ) { 
-    xsltConfigToDAJson = resp; 
- });
-
-var typeReplacements = null;
-//loadTypeReplacements(relativePathToSrcTestResources + "webvalidation/sample.dg.schema.txt", function( resp ) { 
-//	typeReplacements = resp; 
-//});
 
 var xsd;  
-//loadStyleSheet(relativePathToSrcMainResources + "schema/config.xsd", function ( resp ) { 
-//	var xsdtmp = new XMLSerializer().serializeToString(resp);
-//	// cut out the non-ascii stuff which the xsdjs has trouble with
-//	var start = xsdtmp.indexOf("Supported Locales by Successfactors -");
-//	var end = xsdtmp.indexOf("(Traditional Chinese) zh_TW");
-//	xsd =  xsdtmp.substring(0,start) + xsdtmp.substring(end);
-//	});
 
 function checkSchema(resolvedConfig) {
   resolvedConfig = toAscii(resolvedConfig);
