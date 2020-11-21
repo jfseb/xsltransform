@@ -139,7 +139,7 @@ var transforms = {};
 
 function processEvent(e) {
 	console.log("Message received" + e);
-  if ( e.data[0] == 'setTransform') {
+  if ( e.data[0] == 'setData') {
     var key = e.data[1];
     var transformSource = e.data[2];
     if ( key == 'xsltConfigToTyped' ) 
@@ -147,17 +147,17 @@ function processEvent(e) {
       xsltConfigToTyped = parseXML(transformSource);
       return;
     }
-    if ( key == 'xsltConfigToCheckTyped' ) 
+    if ( key == 'xsltConfigToCheckTyped' )
     {
       xsltConfigToCheckTyped = parseXML(transformSource);
       return;
     }
-    if ( key == 'xsltConfigToCheck' ) 
+    if ( key == 'xsltConfigCheck' ) 
     {
       xsltConfigCheck = parseXML(transformSource);
       return;
     }
-    if ( key == 'schema' ) 
+    if ( key == 'xsd' ) 
     {
       xsd = transformSource;
       return;
